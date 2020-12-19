@@ -1,6 +1,10 @@
 <%- include('partials/header'); -%>
 
-<form>
+<form class="form-control" style="width: 290px;margin: 0 auto;
+padding: 30px;
+box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+border-radius: 10px;
+background: white;">
 
     <h2>Sign up</h2>
     <label for="email">Email</label>
@@ -12,6 +16,8 @@
     <button>Sign up</button>
     
 </form>
+
+
 
 <script>
     const form = document.querySelector('form')
@@ -33,7 +39,7 @@
      headers:{'Content-Type':'application/json'}
  })
  const data = await res.json()
- console.log(data);
+ //console.log(data);
  if(data.errors)
  {
     emailerr.textContent = data.errors.email
